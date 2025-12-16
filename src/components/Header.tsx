@@ -87,13 +87,11 @@ const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <Nav>
-        <Logo to="/">ModernBlog</Logo>
+        <Logo to="/">必定API</Logo>
         
         <NavLinks isOpen={isMenuOpen}>
-          <NavLink to="/" activeClassName="active">Home</NavLink>
-          <NavLink to="/blog" activeClassName="active">Blog</NavLink>
-          <NavLink to="/about" activeClassName="active">About</NavLink>
-          <Button variant="primary">Subscribe</Button>
+          <NavLink to="/" activeClassName="active">首页</NavLink>
+          <Button variant="primary">立即开始</Button>
         </NavLinks>
 
         <MobileMenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>

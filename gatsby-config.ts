@@ -2,10 +2,10 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Modern Blog`,
-    description: `A beautiful, modern blog built with Gatsby and TypeScript`,
-    author: `@yourusername`,
-    siteUrl: `https://your-blog.com`,
+    title: `必定API`,
+    description: `一个接口，无限模型 - 一站式对接各种大模型，让开发更智能、更高效`,
+    author: `必定API`,
+    siteUrl: `https://biding-api.com`,
   },
   graphqlTypegen: true,
   plugins: [
@@ -32,8 +32,8 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Modern Blog`,
-        short_name: `Blog`,
+        name: `必定API`,
+        short_name: `必定API`,
         start_url: `/`,
         background_color: `#000000`,
         theme_color: `#000000`,
