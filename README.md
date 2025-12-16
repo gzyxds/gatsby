@@ -1,166 +1,122 @@
-# ModernBlog - Gatsby TypeScript Blog Template
+# Modern Blog - Gatsby TypeScript 博客模板
 
-A beautiful, modern blog template built with Gatsby, TypeScript, and styled-components.
+这是一个使用 Gatsby、TypeScript 和 styled-components 构建的现代化、高性能博客模板。它专为开发者设计，提供了极佳的开发体验和最终用户体验。
 
-## ✨ Features
+## ✨ 主要特性
 
-- **⚡ Lightning Fast** - Built with Gatsby for optimal performance
-- **📱 Fully Responsive** - Beautiful on all devices and screen sizes
-- **🔧 TypeScript** - Full type safety and better developer experience
-- **📝 Markdown Support** - Write posts in Markdown with frontmatter
-- **🎯 SEO Optimized** - Built-in SEO optimization and meta tags
-- **♿ Accessible** - WCAG compliant with proper ARIA labels
-- **🚀 Modern Stack** - React 18, styled-components, and latest dependencies
+- **⚡ 极致性能** - 基于 Gatsby 构建，静态生成，加载速度极快
+- **📱 完全响应式** - 完美适配各种设备和屏幕尺寸
+- **🔧 TypeScript** - 全面的类型安全支持，提升开发效率和代码质量
+- **📝 Markdown 支持** - 使用 Markdown 编写博客文章，支持 Frontmatter
+- **💅 Styled Components** - 使用 CSS-in-JS 进行灵活的样式管理
+- **🔍 SEO 优化** - 内置 SEO 优化和元标签管理
+- **🎨 现代化 UI** - 简洁美观的设计风格
 
-## 🚀 Quick Start
+## 🚀 快速开始
 
-1. **Install dependencies**
+### 前置要求
+
+- Node.js (建议 v18 或更高版本)
+- npm 或 yarn
+
+### 安装步骤
+
+1. **克隆项目**
+   ```bash
+   git clone https://github.com/yourusername/gatsby-blog-template.git
+   cd gatsby-blog-template
+   ```
+
+2. **安装依赖**
    ```bash
    npm install
    ```
 
-2. **Start development server**
+3. **启动开发服务器**
    ```bash
    npm run develop
    ```
 
-3. **Open your browser**
-   Navigate to `http://localhost:8000`
+4. **访问网站**
+   打开浏览器访问 `http://localhost:8000`
 
-## 📁 Project Structure
+## 📁 项目结构
 
-```
+```text
 gatsby-blog-template/
 ├── src/
-│   ├── components/          # Reusable React components
-│   │   ├── Header.tsx
-│   │   ├── Footer.tsx
-│   │   └── Layout.tsx
-│   ├── pages/              # Page components
-│   │   ├── index.tsx       # Home page
-│   │   ├── blog.tsx        # Blog listing page
-│   │   └── about.tsx       # About page
-│   ├── templates/          # Page templates
-│   │   └── blog-post.tsx   # Individual blog post template
-│   ├── content/blog/       # Blog posts in Markdown
-│   ├── styles/            # Global styles and theme
-│   └── images/            # Static images
-├── gatsby-config.ts       # Gatsby configuration
-├── gatsby-node.ts         # Gatsby Node APIs
-└── package.json
+│   ├── components/          # 可复用的 React 组件
+│   │   ├── Header.tsx       # 顶部导航栏
+│   │   ├── Footer.tsx       # 底部页脚
+│   │   └── Layout.tsx       # 页面布局组件
+│   ├── pages/               # 页面组件 (路由)
+│   │   ├── index.tsx        # 首页
+│   │   ├── blog.tsx         # 博客列表页
+│   │   ├── about.tsx        # 关于页面
+│   │   └── 404.tsx          # 404 错误页
+│   ├── templates/           # 页面模板
+│   │   └── blog-post.tsx    # 博客文章详情页模板
+│   ├── content/             # 内容文件
+│   │   └── blog/            # 博客文章 Markdown 文件 (文件夹/index.md)
+│   ├── styles/              # 全局样式
+│   │   └── GlobalStyles.ts  # 全局样式定义
+│   └── images/              # 静态图片资源
+├── gatsby-config.ts         # Gatsby 配置文件 (插件、元数据)
+├── gatsby-node.ts           # Gatsby Node API (动态生成页面等)
+├── package.json             # 项目依赖和脚本
+└── tsconfig.json            # TypeScript 配置
 ```
 
-## 📝 Writing Blog Posts
+## 📝 撰写博客
 
-Create new blog posts by adding Markdown files to `src/content/blog/`. Each post should have frontmatter:
+在 `src/content/blog/` 目录下创建一个新的文件夹（例如 `my-first-post`），并在其中创建 `index.md` 文件。每篇文章都需要包含 Frontmatter 元数据：
 
 ```markdown
 ---
-title: "Your Post Title"
-date: "2024-01-15"
-description: "A brief description of your post"
-tags: ["tag1", "tag2", "tag3"]
+title: "文章标题"
+date: "2024-03-20"
+description: "这是一段关于文章的简短描述，将显示在列表中。"
 ---
 
-# Your post content here
+# 这里是正文标题
 
-Write your content in Markdown...
+在这里使用 Markdown 语法编写你的文章内容...
 ```
 
-## 🎨 Customization
+## 🎨 自定义指南
 
-### Colors and Theme
-Edit `src/styles/GlobalStyles.ts` to customize colors, typography, and spacing:
+### 修改样式
+你可以通过编辑 `src/styles/GlobalStyles.ts` 来修改全局样式、颜色主题和字体设置。
 
-```typescript
-// Update gradient colors
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-
-// Update text colors
-color: rgba(255, 255, 255, 0.8);
-```
-
-### Site Metadata
-Update site information in `gatsby-config.ts`:
+### 修改站点信息
+打开 `gatsby-config.ts` 文件，修改 `siteMetadata` 对象中的信息，这些信息将用于 SEO 和页面标题：
 
 ```typescript
 siteMetadata: {
-  title: `Your Blog Name`,
-  description: `Your blog description`,
-  author: `@yourusername`,
+  title: `你的博客名称`,
+  description: `博客描述`,
+  author: `@你的名字`,
   siteUrl: `https://your-blog.com`,
 },
 ```
 
-## 🚀 Static Hosting & Deployment
+## � 可用脚本
 
-This template generates **100% static files** and can be hosted on any static hosting service.
+- `npm run develop`: 启动本地开发服务器（支持热重载）
+- `npm run build`: 构建生产环境版本
+- `npm run serve`: 本地预览生产环境构建结果
+- `npm run clean`: 清除 Gatsby 缓存（`.cache` 和 `public` 目录）
+- `npm run type-check`: 运行 TypeScript 类型检查
+- `npm run format`: 使用 Prettier 格式化代码
 
-### Build for Production
-```bash
-npm run build
-```
-This creates a `public/` folder with all static files ready for deployment.
+## 🛠 技术栈
 
-### Deployment Options
+- [Gatsby](https://www.gatsbyjs.com/) v5
+- [React](https://reactjs.org/) v18
+- [TypeScript](https://www.typescriptlang.org/)
+- [styled-components](https://styled-components.com/)
+- [Gatsby Plugin Image](https://www.gatsbyjs.com/plugins/gatsby-plugin-image/)
 
-#### 1. Netlify (Recommended)
-```bash
-# Build settings:
-Build command: npm run build
-Publish directory: public
-```
+## 📄 许可证
 
-#### 2. Vercel
-```bash
-npm i -g vercel
-vercel --prod
-```
-
-#### 3. GitHub Pages
-- Push to GitHub
-- Enable GitHub Actions (included in `.github/workflows/`)
-- Your site will be available at `https://username.github.io/repository-name`
-
-#### 4. Manual Static Hosting
-Upload the contents of `public/` folder to any web server:
-- AWS S3 + CloudFront
-- Firebase Hosting  
-- Surge.sh
-- Any traditional web hosting
-
-### 🌐 Why Static Hosting Works
-
-- **No server required** - Just HTML, CSS, JS files
-- **Lightning fast** - Served from CDN edge locations
-- **Highly secure** - No server-side vulnerabilities
-- **Cost effective** - Many free hosting options
-- **Scalable** - Handles traffic spikes effortlessly
-
-## 📦 Available Scripts
-
-- `npm run develop` - Start development server
-- `npm run build` - Build for production
-- `npm run serve` - Serve production build locally
-- `npm run clean` - Clean Gatsby cache
-- `npm run type-check` - Run TypeScript type checking
-
-## 🛠 Built With
-
-- [Gatsby](https://www.gatsbyjs.com/) - Static site generator
-- [React](https://reactjs.org/) - UI library
-- [TypeScript](https://www.typescriptlang.org/) - Type safety
-- [styled-components](https://styled-components.com/) - CSS-in-JS styling
-- [GraphQL](https://graphql.org/) - Data querying
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](../../issues).
-
-## ⭐ Show Your Support
-
-If this project helped you, please give it a ⭐ star on GitHub!
+本项目基于 [0BSD](LICENSE) 许可证开源。
